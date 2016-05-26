@@ -1,0 +1,146 @@
+@font-face
+{
+	font-family: 'OpenSans';
+	src: url(../fonts/OpenSans-Regular.ttf);
+}
+
+body
+{
+	background: #2C3E50;
+	font-family: 'OpenSans';
+	color: #fff;
+}
+
+.loginbox
+{
+	padding: 20px 30px;
+	background: #44596E;
+	margin: 40px auto;
+	border-radius: 10px;
+	color: #ECF0F1;
+	width: 450px;
+	font-size: 12px;
+	font-weight: normal;
+}
+
+.loginbox .form-control
+{
+	background: #2C3E50;
+	margin: 15px auto;
+	font-size: 12px;
+	border: 1px solid #2C3E50;
+	color: #fff;
+	font-weight: normal;
+	height: 45px;
+}
+
+.loginbox a
+{
+	color: #fff;
+}
+
+.loginbox .btn-danger
+{
+	width: 150px;
+	padding: 10px;
+	font-size: 12px;
+}
+
+.loginbox .login-or {
+    width: 40px;
+    height: 25px;
+    background: rgba(0, 0, 0, 0.2);
+    position: relative;
+    margin: 25px auto;
+    text-align: center;
+    line-height: 25px;
+    color: #FFF;
+}
+
+.loginbox .login-or:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    top: -10px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 10px solid rgba(0, 0, 0, 0.2);
+}
+
+.loginbox .login-or:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 0;
+    bottom: -10px;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 10px solid rgba(0, 0, 0, 0.2);
+}
+
+
+.loginbox .social-login
+{
+	text-align: center;
+}
+
+
+
+.btn-twitter
+{
+	background: #15a1d3;
+}
+
+.btn-facebook
+{
+	background: #3C599B;
+}
+
+.btn-google
+{
+	background: #E04A39;
+}
+
+.btn-twitter:hover
+{
+	color: #fff;
+	background: #107c9f;
+}
+
+.btn-facebook:hover
+{
+	color: #fff;
+	background: #2C397B;
+}
+
+.btn-google:hover
+{
+	color: #fff;
+	background: maroon;
+}
+
+.logo
+{
+	height: 80px;
+	padding: 20px;
+	margin: 0 auto;
+	background: #2C3E50;
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+	color: #fff;
+	overflow: hidden;
+	box-shadow: 1px 1px 5px #666;
+	width: 250px;
+}
+
+
+.green
+{
+	color: #aaff00;
+}
+
+/**/
