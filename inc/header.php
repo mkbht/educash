@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,8 +27,10 @@
 									"About Us"=>"about.php?a=b",
 									"Contact Us"=>"contact.php"
 								);
+								if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true)
+									$menuItems = array_merge($menuItems, array("My Profile"=>"profile.php"));
 								foreach($menuItems as $pageName=>$link)
-								{
+								{									
 									$currentUrl = !empty($_SERVER['QUERY_STRING'])? $_SERVER['PHP_SELF']."?".$_SERVER['QUERY_STRING']: $_SERVER['PHP_SELF'];
 									if("/".$link == $currentUrl)
 										echo "<li><a class=\"active\" href=\"".$link."\">".$pageName."</a></li>";
@@ -41,9 +44,13 @@
 								<input class="search" type="search" placeholder="&#xf002; Search.....">
 							</li>
 							<li>
+							<?php if(isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) : ?>
+								<?=$_SESSION['username']?> (<a href="logout.php">Logout</a>)
+							<?php else : ?>
 								<a href="login.php">
 								<button class="btn-login">LOGIN</button>
 								</a>
+							<?php endif; ?>
 							</li>
 						</ul>
 					</nav>

@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,17 +14,24 @@
 					</div>
 
 		<div class="loginbox">
-			<form class="row">
+
+			<form action='login_controller.php' method='post' class="row">
 				<h4><b>Login</b> to your account</h4>
+				<?php
+					if(isset($_SESSION['flash_msg'])) {
+						echo '<div class="alert alert-danger">'. $_SESSION['flash_msg']. '</div>';
+						unset($_SESSION['flash_msg']);
+					}
+				?>
 				<div class="col-md-12">
-					<input class="input form-control" type="text" placeholder="Username or Email">
+					<input class="input form-control" type="text" placeholder="Username or Email" name='username'>
 				</div>
 				<div class="col-md-12">
-					<input class="input form-control" type="password" placeholder="Password">
+					<input class="input form-control" type="password" placeholder="Password" name='password'>
 				</div>
 				<div class="col-md-12">
 					<a href="#">Forgot Password?</a>
-					<button class="btn btn-danger pull-right" type="submit">Log In</button>
+					<button class="btn btn-danger pull-right" type="submit" name='submit'>Log In</button>
 				</div>
 			</form>
 			<div class="login-or">OR</div>
@@ -39,36 +47,3 @@
 	</div>
 		
 </html>
-
-
-
-
-
-
-
-	<!-- <div class="container">
-		<div class="col-md-1"></div>
-		<div class="col-md-10">
-			<div class="logo">
-				<img src="img/logo.png">
-			</div>
-			<div class="mainbox">
-				<div class="left">
-					<img src="img/student.jpg" class="img-responsive">
-				</div>
-				<div class="right">
-					<h2>Login</h2>
-					<form method="post" action="home.php">
-						<input type="text" name="username" placeholder="Username or Email" class="form-control">
-						<input type="password" name="password" placeholder="Password" class="form-control">
-						<button class="btn btn-danger btn-lg btn-block" type="submit">Log In</button>
-					</form>
-					<b>New to ProjectM?</b>
-					<a href="#" class="btn btn-lg btn-success">Signup for free</a>
-
-					<p class="forgetpass">Forgot Password? <a href="#">Click here</a></p>
-				</div>
-			</div>
-		</div>
-		<div class="col-md-1"></div>
-	</div> -->

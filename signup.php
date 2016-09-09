@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,45 +14,60 @@
 					</div>
 
 		<div class="loginbox">
-			<form action="home.php">
+			<form action="signup_controller.php" method="post">
 				<h4><b>Create an Account</h4>
 				<div class="row">
+				<?php
+					if(isset($_SESSION['flash_msg'])) {
+						echo '<div class="alert alert-danger">'. $_SESSION['flash_msg']. '</div>';
+						unset($_SESSION['flash_msg']);
+					}
+				?>
 					<div class="col-md-6">
-						<input class="form-control" type="text" placeholder="First Name">
+						<input type="text" name="first_name" class="form-control" type="text" placeholder="First Name">
 					</div>
 					<div class="col-md-6">
-						<input class="form-control" type="text" placeholder="Last Name">
+						<input type="text" name="last_name" class="form-control" type="text" placeholder="Last Name">
 					</div>
 					<div class="col-md-6">
-						<input class="form-control" type="text" placeholder="Username or Email">
+						<input type="text" name="username" class="form-control" type="text" placeholder="Username">
 					</div>
 					<div class="col-md-6">
-						<input class="form-control" type="password" placeholder="Password">
+						<input type="password" name="password" class="form-control" type="password" placeholder="Password">
+					</div>
+					<div class="col-md-12">
+						<input type="email" name="email" class="form-control" name="email" placeholder="Email">
 					</div>
 					<div class="col-md-12">
 						<div class="radio-inline">
 						  <label>Gender: </label>
 						</div>
 						<div class="radio-inline">
-						  <label><input type="radio" name="optradio">Male</label>
+						  <label><input type="radio" name="gender">Male</label>
 						</div>
 						<div class="radio-inline">
-						  <label><input type="radio" name="optradio">Female</label>
+						  <label><input type="radio" name="gender">Female</label>
 						</div>
 					</div>
 					<div class="col-md-12">
-						<select class="form-control">
+						<select class="form-control" name="country">
 							<option hidden>--Choose your country--</option>
-							<option value="NP">Nepal</option>
-							<option value="UK">UK</option>
-							<option value="US">USA</option>
-							<option value="GE">Germany</option>
-							<option value="AU">Australia</option>
-							<option value="..">.....</option>
+							<option>Nepal</option>
+							<option>UK</option>
+							<option>USA</option>
+							<option>Germany</option>
+							<option>Australia</option>
+							<option>.....</option>
 						</select>
 					</div>
 					<div class="col-md-12">
-						<button class="btn btn-danger pull-right" type="submit">Sign Up</button>
+						<input type="text" class="form-control" name="address" placeholder="Address">
+					</div>
+					<div class="col-md-12">
+						<input type="text" class="form-control" name="cell_no" placeholder="Phone Number">
+					</div>
+					<div class="col-md-12">
+						<button class="btn btn-danger pull-right" type="submit" name="submit">Sign Up</button>
 					</div>
 				</div>
 			</form>

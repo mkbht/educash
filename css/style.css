@@ -42,13 +42,13 @@ header
 
 .banner
 {
-	/*height:600px;*/
+	min-height:600px;
 	background-color: #333;
 	background-image: url('../img/bannercopy.jpg');
 	background-position: -50px -50px;
 	background-origin: border-box;
 	background-size: 100%;
-	padding: 90px 0 35px 0;
+	padding: 90px 0 90px 0;
 	text-align: center;
 	overflow: hidden;
 }
